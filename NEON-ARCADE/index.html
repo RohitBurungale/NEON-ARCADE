@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Neon Arcade - play free browser games.">
+
+  <title>NEON ARCADE | Play Beyond Limits</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <a class="brand" href="#">
+      <span class="brand-mark">N</span>
+      <span>NEON<span class="brand-accent">ARCADE</span></span>
+    </a>
+
+    <nav class="main-nav">
+      <a class="active" href="#discover">Discover</a>
+      <a href="#games">Games</a>
+      <a href="#leaderboard">Leaderboard</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="soundToggle" type="button" aria-label="Turn sound effects on" aria-pressed="false">♫</button>
+
+      <button class="profile-btn" id="profileBtn" type="button" aria-label="Change player name">
+        <span class="avatar">P</span>
+        <span id="playerName">Player</span>
+      </button>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="discover">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          <span class="live-dot"></span>
+          THE ARCADE IS ONLINE
+        </div>
+
+        <h1>
+          PLAY BEYOND<br>
+          <span class="gradient-text">LIMITS.</span>
+        </h1>
+
+        <p class="hero-description">
+          Your next obsession is one click away.
+          Jump into quick-fire challenges, beat your best
+          score, and claim your place on the leaderboard.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a class="btn btn-primary" href="#games">
+            EXPLORE GAMES <span>↗</span>
+          </a>
+
+          <button class="btn btn-ghost" id="randomGame" type="button">
+            ⚡ SURPRISE ME
+          </button>
+
+        </div>
+
+        <div class="hero-stats">
+
+          <div>
+            <strong id="gameCount">04</strong>
+            <span>FREE GAMES</span>
+          </div>
+
+          <i></i>
+
+          <div>
+            <strong>∞</strong>
+            <span>REPLAY VALUE</span>
+          </div>
+
+          <i></i>
+
+          <div>
+            <strong>100%</strong>
+            <span>ARCADE FUN</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- HERO GRAPHICS -->
+      <div class="hero-art">
+
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+
+        <div class="hero-ring"></div>
+
+        <div class="hero-core">
+          <span>NEON</span>
+          <b>ARCADE</b>
+          <small>INSERT COIN · PRESS START</small>
+        </div>
+
+        <div class="float-chip chip-one">+250 XP</div>
+        <div class="float-chip chip-two">PLAYER 01</div>
+        <div class="float-chip chip-three">★ TOP SCORE</div>
+
+        <div class="pixel pixel-a"></div>
+        <div class="pixel pixel-b"></div>
+
+      </div>
+
+    </section>
+
+    <!-- TICKER -->
+    <section class="ticker">
+
+      <div class="ticker-track">
+        <span>✦ LEVEL UP YOUR BREAK</span>
+        <b>///</b>
+        <span>✦ NO DOWNLOADS REQUIRED</span>
+        <b>///</b>
+        <span>✦ CHALLENGE YOURSELF</span>
+        <b>///</b>
+        <span>✦ LEVEL UP YOUR BREAK</span>
+        <b>///</b>
+        <span>✦ NO DOWNLOADS REQUIRED</span>
+      </div>
+
+    </section>
+
+    <!-- GAMES SECTION -->
+    <section class="games-section section-wrap" id="games">
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">PICK YOUR CHALLENGE</div>
+          <h2>
+            THE <span class="gradient-text">GAME ZONE</span>
+          </h2>
+        </div>
+
+        <div class="game-tools">
+
+          <label class="search-box">
+            <span>⌕</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Search games..."
+              aria-label="Search games"
+            >
+          </label>
+
+        </div>
+
+      </div>
+
+      <!-- FILTERS -->
+      <div class="filters" id="filters">
+
+        <button class="filter active" type="button" data-filter="all">
+          ALL GAMES <span>04</span>
+        </button>
+
+        <button class="filter" type="button" data-filter="arcade">
+          ARCADE
+        </button>
+
+        <button class="filter" type="button" data-filter="puzzle">
+          PUZZLE
+        </button>
+
+        <button class="filter" type="button" data-filter="action">
+          ACTION
+        </button>
+
+      </div>
+
+      <!-- GAME CARDS -->
+      <div class="game-grid" id="gameGrid">
+
+        <!-- SNAKE -->
+        <article
+          class="game-card"
+          data-category="arcade action"
+          data-game="snake"
+        >
+
+          <div class="game-art snake-art">
+
+            <span class="art-tag">CLASSIC REBORN</span>
+
+            <div class="snake-visual">
+              ▰<span>▰</span>▰<i>●</i>
+            </div>
+
+            <div class="art-symbol">SNAKE</div>
+
+          </div>
+
+          <div class="game-info">
+
+            <div>
+              <h3>Neon Snake</h3>
+              <p>Eat, grow, don't crash.</p>
+            </div>
+
+            <span class="game-rating">★ 4.9</span>
+
+          </div>
+
+          <div class="game-meta">
+
+            <span>⌁ ARCADE</span>
+            <span>● EASY TO LEARN</span>
+
+            <button class="play-btn" type="button" data-play="snake">
+              PLAY NOW ↗
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- MEMORY -->
+        <article
+          class="game-card"
+          data-category="puzzle"
+          data-game="memory"
+        >
+
+          <div class="game-art memory-art">
+
+            <span class="art-tag">BRAIN BOOST</span>
+
+            <div class="memory-tiles">
+              <i>✦</i>
+              <i>?</i>
+              <i>◈</i>
+              <i>?</i>
+            </div>
+
+            <div class="art-symbol">MATCH IT</div>
+
+          </div>
+
+          <div class="game-info">
+
+            <div>
+              <h3>Memory Matrix</h3>
+              <p>Flip tiles. Find the pairs.</p>
+            </div>
+
+            <span class="game-rating">★ 4.8</span>
+
+          </div>
+
+          <div class="game-meta">
+
+            <span>⌁ PUZZLE</span>
+            <span>● THINK FAST</span>
+
+            <button class="play-btn" type="button" data-play="memory">
+              PLAY NOW ↗
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- TIC TAC TOE -->
+        <article
+          class="game-card"
+          data-category="puzzle arcade"
+          data-game="tictactoe"
+        >
+
+          <div class="game-art tic-art">
+
+            <span class="art-tag">DUEL MODE</span>
+
+            <div class="tic-visual">
+              <i>×</i>
+              <i>○</i>
+              <i>×</i>
+              <i>○</i>
+              <i>×</i>
+              <i>○</i>
+              <i>×</i>
+              <i>○</i>
+              <i>×</i>
+            </div>
+
+            <div class="art-symbol">GRID DUEL</div>
+
+          </div>
+
+          <div class="game-info">
+
+            <div>
+              <h3>Grid Duel</h3>
+              <p>Classic X vs O showdown.</p>
+            </div>
+
+            <span class="game-rating">★ 4.7</span>
+
+          </div>
+
+          <div class="game-meta">
+
+            <span>⌁ STRATEGY</span>
+            <span>● 2 PLAYERS</span>
+
+            <button class="play-btn" type="button" data-play="tictactoe">
+              PLAY NOW ↗
+            </button>
+
+          </div>
+
+        </article>
+
+        <!-- REFLEX -->
+        <article
+          class="game-card"
+          data-category="action arcade"
+          data-game="reaction"
+        >
+
+          <div class="game-art reaction-art">
+
+            <span class="art-tag">REFLEX TEST</span>
+
+            <div class="target-rings">
+              <i></i>
+              <b>GO</b>
+            </div>
+
+            <div class="art-symbol">REACTION</div>
+
+          </div>
+
+          <div class="game-info">
+
+            <div>
+              <h3>Reflex Rush</h3>
+              <p>Wait for green. Tap fast.</p>
+            </div>
+
+            <span class="game-rating">★ 4.9</span>
+
+          </div>
+
+          <div class="game-meta">
+
+            <span>⌁ ACTION</span>
+            <span>● 1 MINUTE</span>
+
+            <button class="play-btn" type="button" data-play="reaction">
+              PLAY NOW ↗
+            </button>
+
+          </div>
+
+        </article>
+
+      </div>
+
+      <p class="empty-state" id="emptyState" hidden>
+        No games found. Try another search.
+      </p>
+
+    </section>
+
+    <!-- LEADERBOARD AND CHALLENGE -->
+    <section class="lower-grid section-wrap">
+
+      <div class="leader-panel" id="leaderboard">
+
+        <div class="panel-title">
+
+          <div>
+            <div class="eyebrow">THE HALL OF FAME</div>
+            <h2>
+              TOP <span class="gradient-text">PLAYERS</span>
+            </h2>
+          </div>
+
+          <span class="trophy">♜</span>
+
+        </div>
+
+        <div class="leader-list" id="leaderList"></div>
+
+        <p class="panel-note">
+          Your best scores are saved on this device.
+        </p>
+
+      </div>
+
+      <div class="challenge-panel">
+
+        <div class="eyebrow">DAILY ARCADE DROP</div>
+
+        <h2>
+          GOT THE<br>
+          <span class="gradient-text">REFLEXES?</span>
+        </h2>
+
+        <p>
+          Test your reaction speed. Beat your personal
+          best and make every millisecond count.
+        </p>
+
+        <button class="btn btn-primary" type="button" data-play="reaction">
+          TAKE THE CHALLENGE ↗
+        </button>
+
+        <div class="challenge-decoration">⚡</div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <a class="brand" href="#">
+      <span class="brand-mark">N</span>
+      <span>NEON<span class="brand-accent">ARCADE</span></span>
+    </a>
+
+    <p>BUILT FOR THE LOVE OF THE GAME.</p>
+
+    <span>
+      © <span id="year"></span> NEON ARCADE
+    </span>
+
+  </footer>
+
+  <!-- GAME MODAL -->
+  <div
+    class="modal-backdrop"
+    id="gameModal"
+    aria-hidden="true"
+  >
+
+    <section
+      class="game-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalTitle"
+    >
+
+      <div class="modal-head">
+
+        <div>
+          <span class="eyebrow">NOW PLAYING</span>
+          <h2 id="modalTitle">GAME TITLE</h2>
+        </div>
+
+        <button
+          class="close-btn"
+          id="closeModal"
+          type="button"
+          aria-label="Close game"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div class="game-stage" id="gameStage"></div>
+
+      <div class="modal-footer">
+
+        <span id="gameInstructions">
+          Ready when you are.
+        </span>
+
+        <span class="score-display" id="scoreDisplay"></span>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="status"></div>
+
+  <!-- JAVASCRIPT FILES -->
+  <script src="js/game/snake.js"></script>
+  <script src="js/game/memory.js"></script>
+  <script src="js/game/tictactoe.js"></script>
+  <script src="js/game/reaction.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
